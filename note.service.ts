@@ -12,6 +12,10 @@ export class NoteService {
     return this.notes;
   }
 
+  getNoteById(id: number): Note | undefined {
+    return this.notes.find(note => note.id === id);
+  }
+
   addNote(note: Note) {
     note.id = this.idCounter++;
     this.notes.push(note);

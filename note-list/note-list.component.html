@@ -2,3 +2,14 @@
 <button (click)="goToCreateNote()">Create New Note</button>
 
 <!-- Rest of your note list HTML here -->
+<h2>Your Notes</h2>
+
+<div *ngIf="notes.length === 0">No notes available.</div>
+
+<ul *ngIf="notes.length > 0">
+  <li *ngFor="let note of notes">
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.content }}</p>
+    <button (click)="editNote(note.id)">Edit</button>
+  </li>
+</ul>
