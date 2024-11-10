@@ -1,0 +1,12 @@
+<h2>{{ isEditMode ? 'Edit Note' : 'Create New Note' }}</h2>
+
+<form (ngSubmit)="saveNote()">
+  <label for="title">Title:</label>
+  <input type="text" id="title" [(ngModel)]="note.title" name="title" required>
+
+  <label for="text">Text:</label>
+  <textarea id="text" [(ngModel)]="note.content" name="content" required></textarea>
+
+  <button type="submit">Save</button>
+  <button type="button" (click)="goBack()">Back</button>
+</form>
